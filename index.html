@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Bihar Jharkhand Scrap Car - Gaya | Gurua</title>
+<style>
+body{font-family:Arial;background:#f2f2f2;margin:0;padding:15px}
+.box{background:white;padding:20px;border-radius:15px;max-width:500px;margin:auto;box-shadow:0 4px 15px rgba(0,0,0,0.1)}
+h1{color:#d32f2f;text-align:center}
+label{font-weight:bold;display:block;margin-top:15px}
+select,input,button{width:100%;padding:12px;margin-top:5px;border-radius:8px;border:1px solid #ccc;font-size:16px;box-sizing:border-box}
+button{background:#25D366;color:white;font-weight:bold;border:none;margin-top:20px;cursor:pointer;font-size:18px}
+.result{background:#fff3cd;padding:15px;border-radius:10px;margin-top:20px;text-align:center;font-size:20px;font-weight:bold;display:none}
+.whatsapp{background:#128C7E;margin-top:10px}
+</style>
+</head>
+<body>
+<div class="box">
+<h1>🚗 Bihar Jharkhand Scrap Car</h1>
+<p style="text-align:center">Gurua, Gaya, Patna, Ranchi - Purani Gaadi ka Sabse Accha Daam</p>
+
+<label>1. Gaadi Chune:</label>
+<select id="car">
+<option value="750">Maruti Alto / Nano - 750kg</option>
+<option value="950">Swift / Baleno / i20 - 950kg</option>
+<option value="1100">Dzire / Honda City - 1100kg</option>
+<option value="1550">Scorpio / Bolero / Innova - 1550kg</option>
+<option value="custom">Custom Wajan Daale</option>
+</select>
+
+<input type="number" id="customWeight" placeholder="Wajan KG me likhe" style="display:none">
+
+<label>2. Aaj Lohe Ka Bhaav (Per KG):</label>
+<input type="number" id="rate" value="38" placeholder="Ex: 38">
+
+<button onclick="calculate()">💰 Daam Nikale</button>
+
+<div id="result" class="result"></div>
+
+<button class="whatsapp" onclick="sendWhatsApp()">📱 WhatsApp Par Bheje</button>
+
+<p style="text-align:center;margin-top:20px;font-size:14px">📍 Gurua More, Gaya - Bihar 824205<br>Call: 919999999999</p>
+</div>
+
+<script>
+let finalPrice = 0;
+document.getElementById('car').addEventListener('change', function(){
+  if(this.value=='custom'){
+    document.getElementById('customWeight').style.display='block';
+  } else {
+    document.getElementById('customWeight').style.display='none';
+  }
+});
+
+function calculate(){
+  let weight = document.getElementById('car').value;
+  if(weight=='custom'){
+    weight = document.getElementById('customWeight').value;
+  }
+  let rate = document.getElementById('rate').value;
+  if(!weight || !rate){ alert('Wajan aur Rate likhe'); return; }
+  
+  // 72% loha nikalta hai gaadi se
+  finalPrice = Math.round(weight * 0.72 * rate);
+  let minPrice = finalPrice - 2000;
+  
+  document.getElementById('result').style.display='block';
+  document.getElementById('result').innerHTML = `Aapki Gaadi Ka Daam<br>₹${minPrice} - ₹${finalPrice}<br><small>Wajan: ${weight}kg x 72% x ₹${rate}</small>`;
+}
+
+function sendWhatsApp(){
+  if(finalPrice==0){ alert('Pehle Daam Nikale'); return; }
+  let msg = `Namaste, Meri gaadi ka wajan ${document.getElementById('car').value}kg hai, Loha rate Rs${document.getElementById('rate').value} hai, Daam Rs${finalPrice} aaya hai. Gaadi bechni hai. Location: Gurua, Gaya`;
+  window.open(`https://wa.me/919999999999?text=${encodeURIComponent(msg)}`, '_blank');
+}
+</script>
+</body>
+</html>
