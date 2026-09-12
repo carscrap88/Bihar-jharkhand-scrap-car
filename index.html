@@ -3,61 +3,85 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Bihar Jharkhand Scrap Car - Gurua, Gaya</title>
+<title>Bihar Jharkhand Scrap Car | Best Price in Gaya</title>
 <style>
-body{font-family:Arial;background:#f2f2f2;margin:0;padding:15px}
-.box{background:white;padding:20px;border-radius:15px;max-width:500px;margin:auto;box-shadow:0 4px 15px rgba(0,0,0,0.1)}
-h1{color:#d32f2f;text-align:center;font-size:22px}
-label{font-weight:bold;display:block;margin-top:15px}
-select,input,button{width:100%;padding:12px;margin-top:5px;border-radius:8px;border:1px solid #ccc;font-size:16px;box-sizing:border-box}
-button{background:#25D366;color:white;font-weight:bold;border:none;margin-top:20px;cursor:pointer;font-size:18px}
-.result{background:#fff3cd;padding:15px;border-radius:10px;margin-top:20px;text-align:center;font-size:20px;font-weight:bold;display:none;border:1px dashed #d32f2f}
-.whatsapp{background:#128C7E;margin-top:10px}
+*{box-sizing:border-box} body{font-family:'Segoe UI',Arial;background:#f0f2f5;margin:0;padding:0}
+.header{background:#b71c1c;color:white;padding:20px;text-align:center}
+.header h1{margin:0;font-size:24px} .header p{margin:5px 0 0;opacity:0.9}
+.container{max-width:480px;margin:-20px auto 20px;background:white;border-radius:20px;padding:25px;box-shadow:0 10px 30px rgba(0,0,0,0.15)}
+.label{font-weight:700;margin-top:18px;display:block;color:#333}
+.input{width:100%;padding:14px;margin-top:6px;border-radius:12px;border:1.5px solid #ddd;font-size:16px;background:#fafafa}
+.btn{width:100%;padding:15px;border:none;border-radius:12px;font-size:18px;font-weight:bold;cursor:pointer;margin-top:12px}
+.btn-green{background:#25D366;color:white} .btn-dark{background:#075E54;color:white}
+.result-box{display:none;margin-top:20px;background:linear-gradient(135deg,#fff8e1,#ffecb3);border:2px dashed #ff6f00;border-radius:15px;padding:18px;text-align:center}
+.result-box .price{font-size:28px;font-weight:900;color:#b71c1c}
+.footer{text-align:center;padding:15px;color:#666;font-size:13px}
 </style>
 </head>
 <body>
-<div class="box">
-<h1>🚗 Bihar Jharkhand Scrap Car</h1>
-<p style="text-align:center">Gurua, Gaya, Patna, Ranchi - Purani Gaadi ka Best Price</p>
-
-<label>1. Gaadi Chune:</label>
-<select id="car">
-<option value="750">Maruti Alto / Nano - 750kg</option>
-<option value="950">Swift / Baleno / i20 - 950kg</option>
-<option value="1100">Dzire / Honda City - 1100kg</option>
-<option value="1550">Scorpio / Bolero / Innova - 1550kg</option>
-<option value="custom">Custom Wajan Daale</option>
-</select>
-<input type="number" id="customWeight" placeholder="Wajan KG me likhe" style="display:none">
-
-<label>2. Aaj Lohe Ka Bhaav (Per KG):</label>
-<input type="number" id="rate" value="38">
-
-<button onclick="calculate()">💰 Daam Nikale</button>
-<div id="result" class="result"></div>
-<button class="whatsapp" onclick="sendWhatsApp()">📱 WhatsApp Par Bheje</button>
-<p style="text-align:center;margin-top:20px;font-size:14px">📍 Gurua More, Gaya - Bihar 824205<br>Call: +91 93652 75508</p>
+<div class="header">
+<h1>🚗 BIHAR JHARKHAND SCRAP CAR</h1>
+<p>Gurua, Gaya, Patna, Ranchi - Spot Payment</p>
 </div>
+
+<div class="container">
+<label class="label">1. Gaadi Ka Model Chune</label>
+<select id="car" class="input">
+<option value="750">Maruti Alto / Nano / Kwid (750kg)</option>
+<option value="950">Swift / Baleno / i20 / WagonR (950kg)</option>
+<option value="1100">Dzire / Honda City / Verna (1100kg)</option>
+<option value="1550">Scorpio / Bolero / Innova / Thar (1550kg)</option>
+<option value="custom">Wajan Khud Daale</option>
+</select>
+<input type="number" id="customWeight" class="input" placeholder="Gaadi ka wajan KG me likhe" style="display:none">
+
+<label class="label">2. Aaj Ka Loha Rate (₹/KG)</label>
+<input type="number" id="rate" class="input" value="38">
+
+<button class="btn btn-green" onclick="calculate()">💰 BEST DAAM NIKALE</button>
+
+<div id="result" class="result-box">
+<div style="font-size:14px">Aapki Gaadi Ka Final Daam</div>
+<div id="priceText" class="price">₹0 - ₹0</div>
+<div id="detailText" style="font-size:12px;color:#555;margin-top:5px"></div>
+</div>
+
+<button class="btn btn-dark" onclick="sendWhatsApp()">📱 WhatsApp Pe Photo Bheje & Becho</button>
+
+<div style="margin-top:20px;background:#f9f9f9;padding:12px;border-radius:10px;font-size:13px">
+✅ Free Pickup - Gaya, Gurua, Bodhgaya, Patna, Ranchi<br>
+✅ Turant Cash Payment + RC Cancel<br>
+✅ Koi Paper Work Nahi
+</div>
+</div>
+
+<div class="footer">
+📍 Gurua More, Gaya - Bihar 824205<br>
+<b>Call / WhatsApp: +91 8340118679</b><br><br>
+© Bihar Jharkhand Scrap Car
+</div>
+
 <script>
-let finalPrice = 0; let finalWeight = 0;
+let finalPrice=0, finalWeight=0;
 document.getElementById('car').addEventListener('change', function(){
-  document.getElementById('customWeight').style.display = this.value=='custom' ? 'block' : 'none';
+ document.getElementById('customWeight').style.display = this.value=='custom'?'block':'none';
 });
 function calculate(){
-  let w = document.getElementById('car').value;
-  if(w=='custom'){ w = document.getElementById('customWeight').value; }
-  let rate = document.getElementById('rate').value;
-  if(!w || !rate){ alert('Wajan aur Rate likhe'); return; }
-  finalWeight = w;
-  finalPrice = Math.round(w * 0.72 * rate);
-  let minPrice = finalPrice - 2000;
-  document.getElementById('result').style.display='block';
-  document.getElementById('result').innerHTML = `Aapki Gaadi Ka Daam<br>₹${minPrice} - ₹${finalPrice}<br><small>${w}kg x 72% x ₹${rate}</small>`;
+ let w=document.getElementById('car').value;
+ if(w=='custom'){ w=document.getElementById('customWeight').value; }
+ let rate=document.getElementById('rate').value;
+ if(!w||!rate){ alert('Wajan aur Rate likhe'); return; }
+ finalWeight=w; finalPrice=Math.round(w*0.72*rate);
+ let min=finalPrice-2000;
+ document.getElementById('result').style.display='block';
+ document.getElementById('priceText').innerText=`₹${min} - ₹${finalPrice}`;
+ document.getElementById('detailText').innerText=`${w}KG x 72% Loha x ₹${rate}/KG`;
+ window.scrollTo(0,300);
 }
 function sendWhatsApp(){
-  if(finalPrice==0){ alert('Pehle Daam Nikale'); return; }
-  let msg = `Namaste, Meri gaadi bechni hai. Wajan: ${finalWeight}kg, Rate: Rs${document.getElementById('rate').value}/kg, Daam: Rs${finalPrice} aaya hai. Location: Gurua, Gaya`;
-  window.open(`https://wa.me/9193652755068?text=${encodeURIComponent(msg)}`, '_blank');
+ if(finalPrice==0){ alert('Pehle Daam Nikale'); return; }
+ let msg=`Namaste Sir, Gaadi bechni hai.%0A%0A*Wajan:* ${finalWeight}KG%0A*Rate:* Rs${document.getElementById('rate').value}/KG%0A*Daam:* Rs${finalPrice}%0A*Location:* Gurua, Gaya%0A%0AKab pickup kar sakte hai?`;
+ window.open(`https://wa.me/918340118679?text=${msg}`, '_blank');
 }
 </script>
 </body>
