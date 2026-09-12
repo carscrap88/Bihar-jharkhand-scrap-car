@@ -1,101 +1,79 @@
-<!-- SCRAP CAR SERVICE CARDS - Like Google Pomelli Style -->
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Bihar Jharkhand Scrap Car - Gaya | Gurua</title>
 <style>
-.scrap-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 15px;
-  padding: 15px;
-  background: #111;
-  font-family: Arial, sans-serif;
-}
-.scrap-card {
-  position: relative;
-  border-radius: 18px;
-  overflow: hidden;
-  height: 280px;
-  border: 1.5px solid #444;
-}
-.scrap-card img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-.scrap-card .orange-line {
-  position: absolute;
-  top: 50%;
-  left: 0;
-  width: 100%;
-  height: 3px;
-  background: #ff7a00;
-  z-index: 2;
-}
-.scrap-card .content {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  background: #0f1a2e;
-  padding: 12px 14px;
-  z-index: 2;
-}
-.scrap-card .content h3 {
-  color: #fff;
-  font-size: 20px;
-  font-weight: 800;
-  line-height: 1.1;
-  margin: 0 0 5px 0;
-}
-.scrap-card .content p {
-  color: #cbd5e1;
-  font-size: 12px;
-  margin: 0;
-  line-height: 1.3;
-}
-@media (max-width: 600px) {
-  .scrap-grid { grid-template-columns: 1fr 1fr; gap: 10px; }
-  .scrap-card { height: 220px; }
-  .scrap-card .content h3 { font-size: 16px; }
-}
+body{font-family:Arial;background:#f2f2f2;margin:0;padding:15px}
+.box{background:white;padding:20px;border-radius:15px;max-width:500px;margin:auto;box-shadow:0 4px 15px rgba(0,0,0,0.1)}
+h1{color:#d32f2f;text-align:center}
+label{font-weight:bold;display:block;margin-top:15px}
+select,input,button{width:100%;padding:12px;margin-top:5px;border-radius:8px;border:1px solid #ccc;font-size:16px;box-sizing:border-box}
+button{background:#25D366;color:white;font-weight:bold;border:none;margin-top:20px;cursor:pointer;font-size:18px}
+.result{background:#fff3cd;padding:15px;border-radius:10px;margin-top:20px;text-align:center;font-size:20px;font-weight:bold;display:none}
+.whatsapp{background:#128C7E;margin-top:10px}
 </style>
+</head>
+<body>
+<div class="box">
+<h1>🚗 Bihar Jharkhand Scrap Car</h1>
+<p style="text-align:center">Gurua, Gaya, Patna, Ranchi - Purani Gaadi ka Sabse Accha Daam</p>
 
-<div class="scrap-grid">
-  <!-- Card 1 -->
-  <div class="scrap-card">
-    <img src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab" alt="old car yard">
-    <div class="orange-line"></div>
-    <div class="content">
-      <h3>Clear Your Yard For 2027</h3>
-      <p>Is an old car taking up space? Turn it into instant cash.</p>
-    </div>
-  </div>
+<label>1. Gaadi Chune:</label>
+<select id="car">
+<option value="750">Maruti Alto / Nano - 750kg</option>
+<option value="950">Swift / Baleno / i20 - 950kg</option>
+<option value="1100">Dzire / Honda City - 1100kg</option>
+<option value="1550">Scorpio / Bolero / Innova - 1550kg</option>
+<option value="custom">Custom Wajan Daale</option>
+</select>
 
-  <!-- Card 2 -->
-  <div class="scrap-card">
-    <img src="https://images.unsplash.com/photo-1552519507-da3b142c6e3d" alt="scrap car">
-    <div class="orange-line"></div>
-    <div class="content">
-      <h3>Free Doorstep Inspection</h3>
-      <p>We come to your home in Patna, Ranchi, anywhere in Bihar-Jharkhand.</p>
-    </div>
-  </div>
+<input type="number" id="customWeight" placeholder="Wajan KG me likhe" style="display:none">
 
-  <!-- Card 3 -->
-  <div class="scrap-card">
-    <img src="https://images.unsplash.com/photo-1581235720704-06d3acfcb36f" alt="tow truck">
-    <div class="orange-line"></div>
-    <div class="content">
-      <h3>100% Legal RC Cancellation</h3>
-      <p>Complete legal protection with official RC cancellation.</p>
-    </div>
-  </div>
+<label>2. Aaj Lohe Ka Bhaav (Per KG):</label>
+<input type="number" id="rate" value="38" placeholder="Ex: 38">
 
-  <!-- Card 4 -->
-  <div class="scrap-card">
-    <img src="https://images.unsplash.com/photo-1494976388531-d1058494cdd8" alt="scrap car cash">
-    <div class="orange-line"></div>
-    <div class="content">
-      <h3>TURN SCRAP CARS INTO CASH TODAY</h3>
-      <p>Free home pickup, instant payout, and 100% legal RC cancellation.</p>
-    </div>
-  </div>
+<button onclick="calculate()">💰 Daam Nikale</button>
+
+<div id="result" class="result"></div>
+
+<button class="whatsapp" onclick="sendWhatsApp()">📱 WhatsApp Par Bheje</button>
+
+<p style="text-align:center;margin-top:20px;font-size:14px">📍 Gurua More, Gaya - Bihar 824205<br>Call: 919999999999</p>
 </div>
+
+<script>
+let finalPrice = 0;
+document.getElementById('car').addEventListener('change', function(){
+  if(this.value=='custom'){
+    document.getElementById('customWeight').style.display='block';
+  } else {
+    document.getElementById('customWeight').style.display='none';
+  }
+});
+
+function calculate(){
+  let weight = document.getElementById('car').value;
+  if(weight=='custom'){
+    weight = document.getElementById('customWeight').value;
+  }
+  let rate = document.getElementById('rate').value;
+  if(!weight || !rate){ alert('Wajan aur Rate likhe'); return; }
+  
+  // 72% loha nikalta hai gaadi se
+  finalPrice = Math.round(weight * 0.72 * rate);
+  let minPrice = finalPrice - 2000;
+  
+  document.getElementById('result').style.display='block';
+  document.getElementById('result').innerHTML = `Aapki Gaadi Ka Daam<br>₹${minPrice} - ₹${finalPrice}<br><small>Wajan: ${weight}kg x 72% x ₹${rate}</small>`;
+}
+
+function sendWhatsApp(){
+  if(finalPrice==0){ alert('Pehle Daam Nikale'); return; }
+  let msg = `Namaste, Meri gaadi ka wajan ${document.getElementById('car').value}kg hai, Loha rate Rs${document.getElementById('rate').value} hai, Daam Rs${finalPrice} aaya hai. Gaadi bechni hai. Location: Gurua, Gaya`;
+  window.open(`https://wa.me/919999999999?text=${encodeURIComponent(msg)}`, '_blank');
+}
+</script>
+</body>
+</html>
