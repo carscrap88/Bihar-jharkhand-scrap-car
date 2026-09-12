@@ -1,99 +1,101 @@
-<!DOCTYPE html>
-<html lang="hi">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Bihar Jharkhand Scrap Cars - 8340118679</title>
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+<!-- SCRAP CAR SERVICE CARDS - Like Google Pomelli Style -->
 <style>
-*{margin:0;padding:0;box-sizing:border-box;font-family:'Poppins',sans-serif}
-body{background:#0f172a;color:white}
-.topbar{background:#1e293b;padding:14px 5%;display:flex;justify-content:space-between;align-items:center;position:sticky;top:0;z-index:100}
-.logo{display:flex;gap:10px;align-items:center}
-.logo-icon{width:40px;height:40px;background:#f97316;border-radius:50%;display:flex;align-items:center;justify-content:center}
-.logo b{font-size:15px;line-height:1.1}
-.menu a{color:#94a3b8;text-decoration:none;margin-left:8px;font-size:11px;padding:5px 9px;border-radius:15px}
-.menu a:hover{background:#f97316;color:white}
-.call-btn{background:#f97316!important;color:white!important;font-weight:700}
-.hero{display:grid;grid-template-columns:1.2fr 0.8fr;gap:20px;padding:30px 5%;background:#1e293b}
-.badge{background:#f97316;padding:5px 10px;border-radius:5px;font-size:10px;font-weight:700;display:inline-block}
-.hero h1{font-size:30px;line-height:1.3;margin:12px 0}
-.hero h1 span{color:#fb923c}
-.hero p{color:#94a3b8;font-size:12px;margin-bottom:12px}
-.btn-wa{background:#f97316;color:white;padding:11px 18px;border:none;border-radius:8px;font-weight:700;cursor:pointer}
-.feats{display:flex;gap:8px;margin-top:15px}
-.feats div{background:#0f172a;border:1px solid #334155;padding:8px;border-radius:8px;flex:1}
-.feats b{font-size:10px;display:block}
-.feats span{font-size:9px;color:#64748b}
-.form-box{background:white;border-radius:12px;padding:16px;color:#1e293b}
-.form-box h3{font-size:14px;color:#0f172a}
-.form-box label{font-size:10px;font-weight:600;margin-top:8px;display:block}
-.form-box input,.form-box select{width:100%;padding:8px;border:1px solid #e2e8f0;border-radius:6px;margin-top:3px;font-size:11px}
-.form-box button{width:100%;background:#f97316;color:white;border:none;padding:9px;border-radius:6px;font-weight:700;margin-top:12px}
-.section{padding:35px 5%}
-.section h2{font-size:22px}
-.section h2 span{color:#fb923c}
-.steps{display:grid;grid-template-columns:1fr 1fr 1fr;gap:12px;margin-top:15px}
-.step{background:#1e293b;padding:18px;border-radius:10px;border:1px solid #334155;text-align:center}
-.step .num{width:40px;height:40px;background:#f97316;border-radius:50%;display:flex;align-items:center;justify-content:center;margin:0 auto 8px;font-weight:700}
-.step p{font-size:11px;color:#94a3b8}
-.gallery{display:grid;grid-template-columns:1fr 1fr 1fr;gap:10px;margin-top:15px}
-.gcard{background:#1e293b;border-radius:10px;overflow:hidden;border:1px solid #334155}
-.gcard img{width:100%;height:150px;object-fit:cover;display:block}
-.gcard .info{padding:8px}
-.gcard b{font-size:11px}
-.gcard span{font-size:10px;color:#94a3b8;display:block}
-.contact-box{display:grid;grid-template-columns:1fr 1fr;gap:15px;margin-top:15px}
-.cbox{background:#1e293b;padding:18px;border-radius:10px;border:1px solid #334155}
-.wa-btn{background:#25D366;color:white;padding:9px;display:block;text-align:center;border-radius:8px;text-decoration:none;font-weight:700;margin-top:8px;font-size:12px}
-.call{background:#f97316}
-.footer{text-align:center;padding:12px;font-size:10px;color:#64748b;background:#020617}
-@media(max-width:800px){.hero,.contact-box{grid-template-columns:1fr}.steps,.gallery{grid-template-columns:1fr 1fr}}
-@media(max-width:500px){.steps,.gallery{grid-template-columns:1fr}}
+.scrap-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 15px;
+  padding: 15px;
+  background: #111;
+  font-family: Arial, sans-serif;
+}
+.scrap-card {
+  position: relative;
+  border-radius: 18px;
+  overflow: hidden;
+  height: 280px;
+  border: 1.5px solid #444;
+}
+.scrap-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.scrap-card .orange-line {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  background: #ff7a00;
+  z-index: 2;
+}
+.scrap-card .content {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background: #0f1a2e;
+  padding: 12px 14px;
+  z-index: 2;
+}
+.scrap-card .content h3 {
+  color: #fff;
+  font-size: 20px;
+  font-weight: 800;
+  line-height: 1.1;
+  margin: 0 0 5px 0;
+}
+.scrap-card .content p {
+  color: #cbd5e1;
+  font-size: 12px;
+  margin: 0;
+  line-height: 1.3;
+}
+@media (max-width: 600px) {
+  .scrap-grid { grid-template-columns: 1fr 1fr; gap: 10px; }
+  .scrap-card { height: 220px; }
+  .scrap-card .content h3 { font-size: 16px; }
+}
 </style>
-</head>
-<body>
-<div class="topbar">
-<div class="logo"><div class="logo-icon">♻️</div><div><b>Bihar Jharkhand<br>Scrap Cars</b></div></div>
-<div class="menu"><a href="#home">Home</a><a href="#gallery">Gallery</a><a href="#contact">Contact</a><a href="tel:+918340118679" class="call-btn">8340118679</a></div>
-</div>
 
-<div class="hero" id="home">
-<div>
-<div class="badge">Trusted by 1000+ Customers</div>
-<h1>अपनी स्क्रैप कार बेचो<br><span>Best Price in Bihar-Jharkhand- 8340118679</span></h1>
-<p>We buy scrap cars in Bihar Jharkhand. Free pickup, instant payment in Gurua, Gaya.</p>
-<button class="btn-wa" onclick="window.open('https://wa.me/918340118679','_blank')">💬 WhatsApp - 8340118679</button>
-<div class="feats"><div><b>🚚 Free Pickup</b><span>At Location</span></div><div><b>📄 RC Cancel</b><span>Legal</span></div><div><b>💰 Instant Pay</b><span>Cash/UPI</span></div></div>
-</div>
-<div class="form-box">
-<h3>Get Instant Quote - 8340118679</h3>
-<label>Car Model</label><input id="model" placeholder="Alto, Bolero">
-<label>Year</label><select id="year"><option>Select Year</option><option>2005</option><option>2010</option><option>2015</option><option>2020</option></select>
-<label>Location</label><input id="loc" placeholder="Gaya">
-<label>Phone</label><input id="phone" placeholder="8340118679">
-<button onclick="window.open('https://wa.me/918340118679?text=Hi Model: '+document.getElementById('model').value+' Year: '+document.getElementById('year').value,'_blank')">Get Quote →</button>
-</div>
-</div>
+<div class="scrap-grid">
+  <!-- Card 1 -->
+  <div class="scrap-card">
+    <img src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab" alt="old car yard">
+    <div class="orange-line"></div>
+    <div class="content">
+      <h3>Clear Your Yard For 2027</h3>
+      <p>Is an old car taking up space? Turn it into instant cash.</p>
+    </div>
+  </div>
 
-<div class="section" id="gallery">
-<h2>Gallery - <span>Hamari Gaadiyan</span></h2>
-<div class="gallery">
-<div class="gcard"><img src="IMG-20260911-WA1030.jpg"><div class="info"><b>Bolero Pickup</b><span>Gurua, Gaya</span></div></div>
-<div class="gcard"><img src="IMG-20260911-WA2166.jpg"><div class="info"><b>Maruti Zen</b><span>Patna</span></div></div>
-<div class="gcard"><img src="IMG-20260911-WA3592.jpg"><div class="info"><b>Alto</b><span>Daltonganj</span></div></div>
-<div class="gcard"><img src="IMG-20260911-WA4939.jpg"><div class="info"><b>Tata Sumo</b><span>Palamu</span></div></div>
-<div class="gcard"><img src="IMG-20260911-WA7156.jpg"><div class="info"><b>Eco Van</b><span>Ranchi</span></div></div>
-</div>
-</div>
+  <!-- Card 2 -->
+  <div class="scrap-card">
+    <img src="https://images.unsplash.com/photo-1552519507-da3b142c6e3d" alt="scrap car">
+    <div class="orange-line"></div>
+    <div class="content">
+      <h3>Free Doorstep Inspection</h3>
+      <p>We come to your home in Patna, Ranchi, anywhere in Bihar-Jharkhand.</p>
+    </div>
+  </div>
 
-<div class="section" id="contact" style="background:#1e293b">
-<h2>Contact - <span>8340118679</span></h2>
-<div class="contact-box">
-<div class="cbox"><h3 style="color:#fb923c">📍 Gurua, Gaya</h3><p>Bihar Jharkhand Scrap Cars<br>Gurua, Gaya, Bihar 824205<br><br><b>Phone: 8340118679</b></p><a href="https://wa.me/918340118679" class="wa-btn">💬 WhatsApp: 8340118679</a><a href="tel:+918340118679" class="wa-btn call">📞 Call: 8340118679</a></div>
-<div class="cbox"><h3 style="color:#fb923c">Gaadi Bhejo</h3><p style="font-size:11px">WhatsApp pe photo bhejo, 5 min me price</p><a href="https://wa.me/918340118679" class="wa-btn">Photo Bhejo →</a></div>
+  <!-- Card 3 -->
+  <div class="scrap-card">
+    <img src="https://images.unsplash.com/photo-1581235720704-06d3acfcb36f" alt="tow truck">
+    <div class="orange-line"></div>
+    <div class="content">
+      <h3>100% Legal RC Cancellation</h3>
+      <p>Complete legal protection with official RC cancellation.</p>
+    </div>
+  </div>
+
+  <!-- Card 4 -->
+  <div class="scrap-card">
+    <img src="https://images.unsplash.com/photo-1494976388531-d1058494cdd8" alt="scrap car cash">
+    <div class="orange-line"></div>
+    <div class="content">
+      <h3>TURN SCRAP CARS INTO CASH TODAY</h3>
+      <p>Free home pickup, instant payout, and 100% legal RC cancellation.</p>
+    </div>
+  </div>
 </div>
-</div>
-<div class="footer">© Bihar Jharkhand Scrap Cars | 8340118679 | Gurua Gaya</div>
-</body>
-</html>
