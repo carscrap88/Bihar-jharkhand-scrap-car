@@ -36,7 +36,7 @@ button{background:#25D366;color:white;font-weight:bold;border:none;margin-top:20
 <button onclick="calculate()">💰 Daam Nikale</button>
 <div id="result" class="result"></div>
 <button class="whatsapp" onclick="sendWhatsApp()">📱 WhatsApp Par Bheje</button>
-<p style="text-align:center;margin-top:20px;font-size:14px">📍 Gurua More, Gaya - Bihar 824205<br>Call: +91 8340118679</p>
+<p style="text-align:center;margin-top:20px;font-size:14px">📍 Gurua More, Gaya - Bihar 824205<br>Call: +91 93652 75508</p>
 </div>
 <script>
 let finalPrice = 0; let finalWeight = 0;
@@ -57,7 +57,7 @@ function calculate(){
 function sendWhatsApp(){
   if(finalPrice==0){ alert('Pehle Daam Nikale'); return; }
   let msg = `Namaste, Meri gaadi bechni hai. Wajan: ${finalWeight}kg, Rate: Rs${document.getElementById('rate').value}/kg, Daam: Rs${finalPrice} aaya hai. Location: Gurua, Gaya`;
-  window.open(`https://wa.me/918340118679?text=${encodeURIComponent(msg)}`, '_blank');
+  window.open(`https://wa.me/9193652755068?text=${encodeURIComponent(msg)}`, '_blank');
 }
 </script>
 </body>
